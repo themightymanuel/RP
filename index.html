@@ -1,0 +1,131 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Mobile Web App</title>
+<link href="jquery-mobile/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="jquery-mobile/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
+<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<script src="choice.js" type="text/javascript"></script>
+<script src="roll.js" type="text/javascript"></script>
+</head> 
+<body> 
+
+<div data-role="page" id="page1">
+	<div data-role="header">
+		<h1>Home</h1>
+	</div><!--Header for Home-->
+	<div data-role="content">	
+		<ul data-role="listview">
+			<li><a href="#page2">Dice</a></li>
+         <li><a href="#page3">Choices</a></li>
+			<li><a href="#page4">Pre-set Choices</a></li>
+		</ul>		
+	</div><!--Content for Home-->
+	<div data-role="footer">
+		<h4>&nbsp;</h4>
+	</div><!--Footer for Home-->
+</div>
+
+<div data-role="page" id="page2">
+	<div data-role="header">
+		<h1>Dice</h1>
+	</div><!--Header for Dice-->
+	<div data-role="content">	
+		<ul data-role="listview">
+			<li><a href="#page1">Go to home</a></li>
+      </ul>		
+      <p>Roll a die</p>
+      	<p>
+      	   <label for="select2">Number of dice:</label>
+            <select name="select2" id="select2">
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option>
+               <option value="6">6</option>
+               <option value="7">7</option>
+               <option value="8">8</option>
+               <option value="9">9</option>
+               <option value="10">10</option>
+            </select>
+      	</p>
+      	<p>
+      	   <label for="number"># of sides:</label>
+            <input name="number" type="number" id="number" value="6">
+      	</p>
+      	<p>
+      	   <input type="button" name="button" id="button" value="Roll!" onClick="roll()">
+      	</p>
+         <div id='rollvalue'></div>		
+	</div><!--Content for Dice-->
+	<div data-role="footer">
+		<h4>&nbsp;</h4>
+	</div><!--Footer for Dice-->
+</div>
+
+<div data-role="page" id="page3">
+	<div data-role="header">
+		<h1>Choices</h1>
+	</div><!--Header for Choices-->
+	<div data-role="content">	
+		<ul data-role="listview">
+			<li><a href="#page1">Go to home</a></li>
+      </ul>	
+      <div id="choice">
+      	<p>Choose from a list of options</p>
+      	<p>
+      	   <label for="select"># of options:</label>
+            <select name="select" id="select" onChange="makelist()">
+            	<option value=""></option>
+					<option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option>
+               <option value="6">6</option>
+               <option value="7">7</option>
+               <option value="8">8</option>
+               <option value="9">9</option>
+               <option value="10">10</option>
+            </select>
+         </p>
+         <div id="options"></div>
+         <div id="results"></div>
+      </div>		
+	</div><!--Content for Choices-->
+	<div data-role="footer">
+		<h4>&nbsp;</h4>
+	</div><!--Footer for Choices-->
+</div>
+
+<div data-role="page" id="page4">
+	<div data-role="header">
+		<h1>Pre-set Choices</h1>
+	</div><!--Header for Pre-set Choices-->
+	<div data-role="content">	
+		<ul data-role="listview">
+			<li><a href="#page1">Go to home</a></li>
+      </ul>	
+      <p>Choose Randomly from preset choices</p>
+      <p>
+      	<select name="select3" id="select3">
+      	   <option value="North,East,South,West">North, East, South, West</option>
+      	   <option value="North,East,South">North, East, South</option>
+      	   <option value="North,East,West">North, East, West</option>
+      	   <option value="North,South,West">North, South, West</option>
+      	   <option value="East,South,West">East, South, West</option>
+      	   <option value="Kill,Maim,Miss">Kill, Maim, Miss</option>
+      	</select>
+         <input type="button" value="Pick" onClick="preset()"
+      </p>
+      <div id="preset"></div>		
+	</div><!--Content for Pre-set Choices-->
+	<div data-role="footer">
+		<h4>&nbsp;</h4>
+	</div><!--Footer for Pre-set Choices-->
+</div>
+
+</body>
+</html>
